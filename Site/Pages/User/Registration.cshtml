@@ -1,0 +1,69 @@
+﻿@page
+@model Site.Pages.User.RegistrationModel
+@{
+    ViewData["Title"] = "Регистрация";
+    ViewData["NavBar"] = "false";
+}
+
+<br />
+<h3>Регистрация</h3>
+
+<form onsubmit="return send()" method="post">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text my-input-header" id="basic-addon1">Email</span>
+        </div>
+        <input class="form-control my-input" type="email" name="email" value="" placeholder="Введите email" required />
+    </div>
+    <p>
+        Логин должен быть длиной от 3 до 50 символов. Для ввода разрешены символы английского алфавита, цифры
+        и знак нижнего подчеркивания.
+    </p>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text my-input-header" id="basic-addon1">Логин</span>
+        </div>
+        <input class="form-control my-input" type="text" name="login" value="" placeholder="Введите логин" pattern="[A-z0-9_]{3,50}" required />
+    </div>
+    <p>
+        Пароль должен быть длиной от 6 до 256 символов. Для ввода разрешены символы английского алфавита, цифры.
+    </p>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text my-input-header" id="basic-addon1">Пароль</span>
+        </div>
+        <input id="password" class="form-control my-input" type="password" name="password" value="" placeholder="Введите пароль" pattern="[A-z0-9]{6,256}" required />
+    </div>
+    <h6 id="passwordText" style="color: red;"></h6
+>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text my-input-header" id="basic-addon1">Еще раз</span>
+        </div>
+        <input id="passwordConfirm" class="form-control my-input" type="password" name="passwordconfirm" value="" placeholder="Повторите пароль" pattern="[A-z0-9]{6,256}" required />
+    </div>
+
+    <button class="my-button" type="submit">Зарегистрировать</button>
+</form>
+
+<br />
+<br />
+<br />
+<div class="pt-lg-5"><a class="my-link" href="/user/login"><h6>Отмена</h6></a></div>
+
+
+<script>
+    function send() {
+        const password = document.getElementById('password').value;
+        const passwordConfirm = document.getElementById('passwordConfirm').value;
+
+        if (password == passwordConfirm) {
+            document.getElementById('passwordText').innerHTML = "";
+            return true;
+        }
+        else {
+            document.getElementById('passwordText').innerHTML = "Пароли не совпадают!";
+            return false;
+        }
+    }
+</script>

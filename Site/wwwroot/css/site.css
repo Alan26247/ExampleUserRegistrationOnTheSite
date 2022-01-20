@@ -1,0 +1,65 @@
+﻿.my-bgColor-bg {
+    background-color: #1e0f00;
+}
+.my-bgColor-bgLight {
+    background-color: #321a04;
+}
+.my-bgColor-dark {
+    background-color: #000000;
+}
+.my-bgColor-grey {
+    background-color: #241809;
+}
+.my-color-white {
+    color: #ff0000;
+}
+.my-color-red {
+    color: #ff0000;
+}
+.my-color-milk {
+    color: #e9dca3;
+}
+.my-color-lightBlue {
+    color: #57a3b8;
+}
+.my-color-comment {
+    color: #a6713d;
+}
+
+
+body {
+    min-height: 100vh;
+    min-width: 100%;
+    background-image: url("../images/background.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial;
+}
+
+.my-input-header {
+    background-color: #b06a21;
+    color: white;
+    width: 100px;
+}
+
+.my-button {
+    background-color: #35210e;
+    border-color: #bb936d;
+    color: white;
+    width: 200px;
+    border-radius: 10px;
+}
+
+a {
+    color: #80b9d8; 
+    text-decoration: none; 
+}
+    a:visited {
+        color: #80b9d8;
+    }
+    a:hover {
+        color: yellow; 
+        text-decoration: underline;
+    }

@@ -1,0 +1,31 @@
+﻿@page
+@model Site.Pages.MainModel
+@{
+    ViewData["Title"] = "Главная";
+    ViewData["NavBar"] = "true";
+}
+
+<br />
+<h3>Главная страница сайта</h3>
+
+<br />
+<br />
+<br />
+<form onsubmit="return exit()" method="get" action="/user/login">
+    <button class="my-button tp-lg-5" type="submit">Выйти из аккаунта</button>  
+</form>
+<br />
+<div class="mt-lg-3"><a class="my-link" href="/user/changepassword"><h6>Сменить пароль</h6></a></div>
+<br />
+<div class="mt-lg-3"><a class="my-link" href="/user/registrationdelete"><h6>Удалить аккаунт</h6></a></div>
+
+<script src="~/lib/cookiejs/src/cookie.min.js"></script>
+
+<script>
+    function exit() {
+        deleteCookie('Email');
+        deleteCookie('Token');
+
+        return true;
+    }
+</script>

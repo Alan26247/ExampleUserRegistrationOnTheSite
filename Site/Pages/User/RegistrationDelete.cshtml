@@ -1,0 +1,45 @@
+﻿@page
+@model RSGServer.Pages.User.RegistrationDeleteModel
+@{
+    ViewData["Title"] = "Удаление аккаунта";
+    ViewData["NavBar"] = "false";
+}
+
+<br />
+<h3>Удаление аккаунта</h3>
+
+<br />
+<form method="get" action="/main">
+    <button class="my-button" type="submit">Отменить удаление</button>
+</form>
+
+<br />
+<form method="post">
+    <h5 style="color: red">
+        Вы собираетесь удалить аккаунт. Это необратимая операция. При удалении удалится весь
+        контент касаемый вашего аккаунта без возможности восстановления!
+    </h5>
+    <br />
+    <input type="hidden" name="email" value=@Model.Value.Email />
+    <div class="row justify-content-center">
+        <div class="col-lg align-content-center">
+            <div>
+                <h5 for="scales">Я ОСОЗНАЮ</h5>
+                <input style="width: 40px; height: 40px" type="checkbox" id="scales" required>
+            </div>
+        </div>
+    </div>
+    <br />
+    <p>Пожалуйста укажите причину удаления аккаунта. Для ввода разрешены символы русского, английского алфавита и цифры.</p>
+    <div class="input-group mb-3">
+        <input class="form-control my-input" type="text" name="reasonfordeletion" placeholder="Укажите причину удаления аккаунта" pattern="[A-zА-я0-9\s]{0,1024}"/>
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text my-input-header" id="basic-addon1">Пароль</span>
+        </div>
+        <input class="form-control my-input" type="password" name="password" value="" placeholder="Введите пароль" pattern="[A-z0-9_]{6,256}" required />
+    </div>
+
+    <button class="my-button" type="submit">Удалить аккаунт</button>
+</form>

@@ -1,0 +1,30 @@
+﻿@page
+@model Site.Pages.User.RegistrationRecoveryModel
+@{
+    ViewData["Title"] = "Восстановление аккаунта";
+    ViewData["NavBar"] = "false";
+}
+
+<br />
+<h3>Восстановление аккаунта</h3>
+
+<form onsubmit="return send()" method="post">
+    <p>
+       Для восстановления аккаунта введите адрес вашей электронной почты.
+    </p>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text my-input-header" id="basic-addon1">Email</span>
+        </div>
+        <input class="form-control my-input" type="email" name="email" value="" placeholder="Введите email" required />
+    </div>
+
+    <button class="my-button" type="submit">Восстановить</button>
+</form>
+
+<br />
+<br />
+<br />
+<form method="get" action="/user/login">
+    <button class="my-button" type="submit">Отмена</button>
+</form>

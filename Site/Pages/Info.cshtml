@@ -1,0 +1,17 @@
+﻿@page
+@model Site.Pages.InfoModel
+
+@{
+    ViewData["Title"] = "Страница вывода информации";
+    ViewData["NavBar"] = "false";
+}
+
+<div class="row  justify-content-center">
+    <div class="col-lg-6">
+        <h1 class="text-center mt-5">@Model.Info.Header</h1>
+        <h5 class="mt-5">@Model.Info.Text</h5>
+        <form class="mt-5" action=@Model.Info.RedirectPage method="get">
+            <button class="my-button" type="submit">Ok</button>
+        </form>
+    </div>
+</div>
